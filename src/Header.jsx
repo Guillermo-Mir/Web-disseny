@@ -1,24 +1,31 @@
 import React from "react";
-import './Header.css'
+
 class Header extends React.Component {
     render() {
         return (
-            <div>
-                <div class="nav-container">
-                    <div class="logo">
-                        <img src="../logo.png"></img>
+            <header className="bg-white pt-4">
+
+                <div className="flex justify-between items-center px-5 pb-4">
+
+                    <div className="logo">
+                        <img src="../public/logo.png" alt="Logo de Pastel" className="h-14" />
                     </div>
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="#">Historia</a></li>
-                            <li><a href="#">Galeria</a></li>
-                            <li><a href="#">Botiga Online</a></li>
-                            <li><a href="#">Fòrum</a></li>
+
+                    <nav className="hidden md:block">
+                        <ul className="flex space-x-10 uppercase text-sm font-semibold text-gray-700">
+                            <li><a href="#" className="hover:text-[#d17842] transition duration-150">Historia</a></li>
+                            <li><a href="#" className="hover:text-[#d17842] transition duration-150">Galeria</a></li>
+                            <li><a href="#" className="hover:text-[#d17842] transition duration-150">Botiga Online</a></li>
+                            <li><a href="#" className="hover:text-[#d17842] transition duration-150">Fòrum</a></li>
                         </ul>
                     </nav>
-                    <div class="user-icon"/>
+
+                    <div className="text-gray-700 text-2xl">
+                    </div>
                 </div>
-            </div>
+
+                <div className="h-1 bg-[#d17842] w-full"></div>
+            </header>
         );
     }
 }
