@@ -1,0 +1,84 @@
+/* Variables de color (opcional, pero buena práctica) */
+:root {
+    --primary-color: #d17842; /* Naranja/Marrón de la franja */
+    --text-color-dark: #333;
+    --bg-color-content: #fff;
+}
+
+/* Estilo para el contenedor principal del componente Header */
+.header-container {
+    background-color: var(--bg-color-content);
+    padding-top: 15px; /* Espacio superior */
+}
+
+/* Contenedor de la barra de navegación (Flexbox principal) */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre logo, nav y el ícono */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 15px; /* Espacio inferior antes de la franja */
+}
+
+/* Logo */
+.logo img {
+    height: 55px; /* Ajusta el tamaño del logo */
+    /* Asegúrate de que logo.png tenga el fondo de pastel o simula el estilo si es necesario */
+}
+
+/* Lista de navegación */
+.nav {
+    display: flex;
+    gap: 40px; /* Espacio entre los elementos del menú */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    transition: color 0.3s;
+}
+
+.nav li a:hover {
+    color: var(--primary-color);
+}
+
+/* Ícono de usuario (Simulación) */
+.user-icon {
+    /* Aquí puedes usar un ícono de Font Awesome si lo tienes enlazado */
+    font-size: 24px;
+    color: var(--text-color-dark);
+    /* Simulación si no usas Font Awesome. Si usas Font Awesome, elimina este contenido. */
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    /* Si estás usando la clase con el tag vacío (<div class="user-icon"/>)
+       DEBERÍAS usar un ícono real (como <i class="fas fa-user-circle"></i>)
+       dentro de ese div en tu JSX para que aparezca.
+    */
+}
+
+/* Franja decorativa bajo el header */
+.header-stripe {
+    height: 5px;
+    background-color: var(--primary-color);
+    width: 100%;
+}
+
+/* Media Query para hacerlo responsivo en dispositivos pequeños */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        padding-bottom: 10px;
+    }
+    .nav {
+        margin: 15px 0; /* Espacio arriba y abajo del menú */
+        gap: 15px;
+    }
+}
