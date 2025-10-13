@@ -7,12 +7,12 @@ class Header extends React.Component {
                 
                 <div className="relative flex items-center px-5 py-4">
 
-                    {/* Logo de Pastel */}
+                    
                     <div className="logo flex-shrink-0">
                         <img src="../public/logo.png" alt="Logo de Pastel" className="h-20"/>
                     </div>
 
-                    {/* Menú centrado */}
+                    
                     <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
                         <ul className="flex space-x-12 uppercase text-sm font-semibold text-gray-700">
                             <li>
@@ -30,14 +30,14 @@ class Header extends React.Component {
                         </ul>
                     </nav>
 
-                    {/* Logo del usuario */}
+                    
                     <div className="user-logo ml-auto flex items-center">
                         <img src="../public/user.svg" alt="Usuario" className="h-10 w-10 rounded-full hover:ring-2 hover:ring-[#d17842] transition duration-200"/>
                     </div>
 
                 </div>
 
-                {/* Barra inferior */}
+                
                 <div className="h-1 bg-[#d17842] w-full"></div>
             </header>
         );

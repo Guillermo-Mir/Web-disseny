@@ -1,19 +1,27 @@
 import React from "react";
+import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 class Footer extends React.Component {
     render() {
         return (
-          <footer style={{ backgroundColor: "#F3E9DC" }} className="py-8 px-5 mt-10">
+          <footer style={{ backgroundColor: "#F3E9DC" }} className="py-8 relative">
             
-            {/* Logos centrados */}
-            <div className="flex flex-wrap justify-center items-center gap-6 mb-6">
-                <img src="../public/250558.png" alt="Logo 2" className="h-10"/>
-                <img src="../public/logo_inst-removebg-preview (1).png" alt="Instagram Logo" className="h-12"/>
-                <img src="../public/png-transparent-removebg-preview.png" alt="Logo 4" className="h-10"/>
+            {/* Línea naranja en la parte superior del footer */}
+            <div className="h-1 bg-[#d17842] w-full mb-6"></div>
+
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <FaFacebook className="hover:text-[#d17842] transition-colors duration-300" size={40} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <FaTwitter className="hover:text-[#d17842] transition-colors duration-300" size={40} />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <FaInstagram className="hover:text-[#d17842] transition-colors duration-300" size={40} />
+              </a>
             </div>
 
-            {/* Texto */}
-            <p className="text-center text-gray-600 text-sm">
+            <p className="text-center text-gray-600 text-sm mt-3">
                 &copy; 2025 Copyright Pastel. Todos los derechos reservados.
             </p>
 
