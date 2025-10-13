@@ -37,19 +37,19 @@ class Home extends React.Component {
                         
                         <div className="bg-white p-5 rounded-lg shadow-md">
                             <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded hover:bg-orange-500 transition">
-                                Noticia {'→'}
+                                Noticia 
                             </button>
                         </div>
     
                         <div className="bg-white p-5 rounded-lg shadow-md">
                             <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded hover:bg-orange-500 transition">
-                                Noticia {'→'}
+                                Noticia 
                             </button>
                         </div>
     
                         <div className="bg-white p-5 rounded-lg shadow-md">
                             <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded hover:bg-orange-500 transition">
-                                Noticia {'→'}
+                                Noticia 
                             </button>
                         </div>
     
