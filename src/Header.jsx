@@ -7,7 +7,7 @@ class Header extends React.Component {
         const primaryColor = "#d17842"; 
         
         return (
-            <header style={{ backgroundColor: "#F3E9DC" }} className="shadow-lg sticky top-0 z-50">
+            <header style={{ backgroundColor: "#F3E9DC" }} className="shadow-lg sticky top-0 z-50 border-b-4 border-orange-400">
                 
                 <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
 
@@ -70,8 +70,6 @@ class Header extends React.Component {
                     </div>
 
                 </div>
-
-                <div className={`h-1 bg-[${primaryColor}] w-full`}></div>
             </header>
         );
     }

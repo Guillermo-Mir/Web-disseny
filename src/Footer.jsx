@@ -8,7 +8,7 @@ class Footer extends React.Component {
         const linkStyle = `text-gray-600 hover:text-[${primaryColor}] transition-colors duration-300 text-sm md:text-base`;
 
         return (
-          <footer style={{ backgroundColor: "#F3E9DC" }} className="py-10 md:py-12 w-full">
+          <footer style={{ backgroundColor: "#F3E9DC" }} className="py-10 md:py-12 w-full border-t-4 border-orange-400">
             
             
             <div className={`h-1 bg-[${primaryColor}] w-full mb-8`}></div>
