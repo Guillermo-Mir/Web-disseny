@@ -23,9 +23,6 @@ class Home extends React.Component {
                         <p className="text-xl md:text-2xl font-light">
                             Descubre nuestros sabores artesanales, hechos con pasión y los mejores ingredientes.
                         </p>
-                        <button className="mt-8 bg-orange-500 text-white font-bold text-lg px-10 py-3 rounded-full shadow-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105">
-                            Ver Menú Completo
-                        </button>
                     </div>
                 </div>
                 <div className="flex flex-col gap-12 max-w-6xl w-full py-12">
