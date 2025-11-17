@@ -1,14 +1,14 @@
+import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Header';
+import Footer from './Footer';
 import Home from './Home';
-import Footer from './Footer';
-import { Routes } from 'react-router-dom';
-/*import Menu from './Menu'; 
-import Footer from './Footer';
-*/
+import Historia from './components/historia'
+import Navbar from './components/Navbar';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,10 +16,10 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Header/>}/>
         <Route path="/" element={<Home/>}/>
-        <Route path="/" element={<Footer/>}/>
+        <Route path="/historia" element={<Historia/>}/>
       </Routes>
+      <Footer/>
     </div>
   )
 }
