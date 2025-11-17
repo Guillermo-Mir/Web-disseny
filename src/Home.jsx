@@ -8,11 +8,11 @@ class Home extends React.Component {
                 <div
                     className="w-full h-96 flex items-center justify-center text-white p-8 mb-12"
                     style={{
-                        backgroundImage: "url('fondo.jpg')", // Cambia esto
+                        backgroundImage: "url('fondo.jpg')", 
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
-                        backgroundColor: '#F3E9DC', // Fallback si la imagen no carga
-                        boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.4)' // Oscurece la imagen ligeramente
+                        backgroundColor: '#F3E9DC', 
+                        boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.4)'
                     }}
                 >
 
