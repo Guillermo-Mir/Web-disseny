@@ -12,7 +12,7 @@ class Header extends React.Component {
                 <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3">
 
                     <div className="flex items-center flex-shrink-0">
-                        <img src="../public/logo.png" alt="Logo de Pastel" className="h-16 md:h-20"/>
+                        <img src="logo.png" alt="Logo de Pastel" className="h-16 md:h-20"/>
                         <span className="ml-3 text-2xl md:text-3xl font-bold tracking-wider text-gray-800 hidden sm:block"></span>
                     </div>
 
@@ -62,7 +62,7 @@ class Header extends React.Component {
                         
                         <a href="#" aria-label="Perfil de Usuario">
                             <img 
-                                src="../public/user.svg" 
+                                src="/user.svg" 
                                 alt="Usuario" 
                                 className={`h-10 w-10 rounded-full hover:ring-2 hover:ring-[${primaryColor}] transition duration-200 cursor-pointer`}
                             />

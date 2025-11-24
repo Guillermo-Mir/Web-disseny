@@ -8,7 +8,7 @@ class Home extends React.Component {
                 <div
                     className="w-full h-96 flex items-center justify-center text-white p-8 mb-12"
                     style={{
-                        backgroundImage: "url('fondo.jpg')", 
+                        backgroundImage: "url('home/fondo.jpg')", 
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundColor: '#F3E9DC', 
@@ -32,17 +32,17 @@ class Home extends React.Component {
                         </h2>
                         <div className="flex flex-wrap justify-center gap-8 w-full">
                             <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="brazo-gitano-nata-380x380.jpg" width={300} height={300} className="rounded" />
+                                <img src="/home/brazo-gitano-nata-380x380.jpg" width={300} height={300} className="rounded" />
                                 <h4 className="text-center font-semibold">Brazo de gitano</h4>
                             </div>
 
                             <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="foto-cuadrada-2025-01-15T112519.300.png" width={300} height={300} className="rounded" />
+                                <img src="/home/foto-cuadrada-2025-01-15T112519.300.png" width={300} height={300} className="rounded" />
                                 <h4 className="text-center font-semibold">Tarta de queso</h4>
                             </div>
 
                             <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="tarta-fresitas-1024x1024.jpg" width={300} height={300} className="rounded" />
+                                <img src="/home/tarta-fresitas-1024x1024.jpg" width={300} height={300} className="rounded" />
                                 <h4 className="text-center font-semibold">Tarta de fresa</h4>
                             </div>
                         </div>

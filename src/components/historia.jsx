@@ -8,9 +8,9 @@ const Historia = () => {
       descripcion:
         "La historia de la pastelería se remonta al antiguo Egipto y Roma, donde ya se elaboraban panes endulzados con miel y frutas. Los egipcios fueron pioneros en técnicas de fermentación, mientras que los romanos desarrollaron las primeras tortas y postres a base de queso y harina.",
       imagenes: [
-        { src: "pan-egipcio.jpg", titulo: "Egipto: Panes y Miel" },
-        { src: "dulce-romano.jpg", titulo: "Roma: Postres con Queso" },
-        { src: "azucar-india.jpg", titulo: "Asia: Descubrimiento del Azúcar" },
+        { src: "/historia/Miel-y-alimentacion-en-egipto.webp", titulo: "Egipto: Panes y Miel" },
+        { src: "/historia/queso-grecia-clasica.webp", titulo: "Roma: Postres con Queso" },
+        { src: "/historia/antillas.webp", titulo: "Asia: Descubrimiento del Azúcar" },
       ],
     },
     {
@@ -56,7 +56,7 @@ const Historia = () => {
       <div
         className="w-full h-96 flex items-center justify-center text-white mb-16 rounded-xl overflow-hidden"
         style={{
-          backgroundImage: "url('fondo-historia.jpg')",
+          backgroundImage: "url('/historia/historia-de-la-panadería-mexicana-shutterstock_360856055.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           boxShadow: "inset 0 0 0 2000px rgba(0,0,0,0.35)",
