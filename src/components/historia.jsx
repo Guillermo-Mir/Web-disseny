@@ -1,171 +1,192 @@
 import React from "react";
+import VideoPlayer from "./VideoPlayer";
 
-const Historia = () => {
-  const timelineItems = [
-    {
-      periodo: "📜 Antigüedad",
-      titulo: "Los Primeros Bocados Dulces",
-      descripcion:
-        "La historia de la pastelería se remonta al antiguo Egipto y Roma, donde ya se elaboraban panes endulzados con miel y frutas. Los egipcios fueron pioneros en técnicas de fermentación, mientras que los romanos desarrollaron las primeras tortas y postres a base de queso y harina.",
-      imagenes: [
-        { src: "/historia/Miel-y-alimentacion-en-egipto.webp", titulo: "Egipto: Panes y Miel" },
-        { src: "/historia/queso-grecia-clasica.webp", titulo: "Roma: Postres con Queso" },
-        { src: "/historia/antillas.webp", titulo: "Asia: Descubrimiento del Azúcar" },
-      ],
-    },
-    {
-      periodo: "✨ Edad Media y Renacimiento",
-      titulo: "Guardianes del Sabor y Nacimiento de la Pastelería Profesional",
-      descripcion:
-        "Durante la Edad Media, los conventos y monasterios preservaron recetas dulces. Con la llegada del azúcar a Europa y el Renacimiento, surgieron las primeras pastelerías profesionales en Italia y Francia, donde la presentación se convirtió en arte.",
-    },
-    {
-      periodo: "🥐 Siglo XVII - XXI",
-      titulo: "Hitos Clave de la Pastelería Moderna",
-      descripcion:
-        "Desde la corte francesa hasta la globalización de la pastelería, chefs e innovadores han creado técnicas, recetas y diseños que hoy conocemos.",
-      hitos: [
-        {
-          siglo: "Siglo XVII",
-          titulo: "Corte Francesa",
-          descripcion:
-            "Marie-Antoine Carême codificó muchas recetas y técnicas, elevando la pastelería a la categoría de Haute Cuisine.",
-          boton: "Más sobre Carême",
-        },
-        {
-          siglo: "Siglo XIX",
-          titulo: "Producción en Masa",
-          descripcion:
-            "La Revolución Industrial permitió el acceso a ingredientes más baratos y nuevas herramientas para producir dulces.",
-          boton: "Avances Tecnológicos",
-        },
-        {
-          siglo: "Siglo XX y XXI",
-          titulo: "Fusión e Innovación",
-          descripcion:
-            "La pastelería se globaliza, incorporando sabores de todo el mundo y enfocándose en diseño, ligereza y salud.",
-          boton: "Chefs Innovadores",
-        },
-      ],
-    },
-  ];
+const HistoriaModuloSimple = ({ tituloPrincipal, tituloSecundario, descripcion, children, isLeft = true }) => {
 
-  return (
-    <div className="bg-[#F3E9DC] flex flex-col items-center py-16 px-4">
-      {/* Header */}
-      <div
-        className="w-full h-96 flex items-center justify-center text-white mb-16 rounded-xl overflow-hidden"
-        style={{
-          backgroundImage: "url('/historia/historia-de-la-panadería-mexicana-shutterstock_360856055.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          boxShadow: "inset 0 0 0 2000px rgba(0,0,0,0.35)",
-        }}
-      >
-        <div className="text-center max-w-4xl px-4">
-          <h1 className="text-5xl md:text-7xl font-serif font-extrabold mb-4 text-shadow-lg">
-            Un Viaje Dulce a Través del Tiempo
-          </h1>
-          <p className="text-xl md:text-2xl font-light text-white/90">
-            Descubre los orígenes y la evolución del arte de la repostería.
-          </p>
-        </div>
-      </div>
+    const flexClass = isLeft ? 'md:flex-row' : 'md:flex-row-reverse';
 
-      {/* Timeline */}
-      <div className="relative max-w-6xl w-full">
-        {/* Línea central */}
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 w-1 bg-orange-400 h-full"></div>
-
-        {timelineItems.map((item, idx) => {
-          const isLeft = idx % 2 === 0;
-
-          return (
-            <div key={idx} className="relative w-full mb-24 flex justify-between items-center">
-              {/* Bloque de contenido principal */}
-              <div
-                className={`w-5/12 p-6 flex flex-col bg-white rounded-xl shadow-lg border-t-4 border-orange-400 ${
-                  isLeft ? "ml-auto" : "mr-auto"
-                }`}
-              >
-                {/* Títulos y descripción alineados a la derecha */}
-                <h3 className="text-2xl font-serif font-bold text-gray-800 text-right">
-                  {item.periodo}
+    return (
+        <div className={`flex flex-col ${flexClass} items-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300 overflow-hidden`}>
+            <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+                <span className="text-xl font-serif font-extrabold text-orange-600 mb-2 border-b-2 border-orange-200 w-max pb-1">
+                    {tituloPrincipal}
+                </span>
+                <h3 className="text-3xl font-serif font-bold text-gray-800 mb-4">
+                    {tituloSecundario}
                 </h3>
-                <h2 className="text-xl md:text-3xl font-serif font-semibold mt-2 text-gray-700 text-right">
-                  {item.titulo}
-                </h2>
-                <p className="text-gray-600 mt-2 text-right">{item.descripcion}</p>
-
-                {/* Imágenes */}
-                {item.imagenes && (
-                  <div
-                    className={`flex flex-wrap gap-4 mt-4 ${
-                      idx === 0
-                        ? "justify-center"
-                        : isLeft
-                        ? "justify-end"
-                        : "justify-start"
-                    }`}
-                  >
-                    {item.imagenes.map((img, i) => (
-                      <div
-                        key={i}
-                        className="bg-white p-2 rounded-lg shadow-md border-t-2 border-orange-300 max-w-xs flex flex-col items-center"
-                      >
-                        <img
-                          src={img.src}
-                          width={200}
-                          height={200}
-                          className="rounded"
-                          alt={img.titulo}
-                        />
-                        <h4 className="mt-2 font-serif font-semibold text-center">
-                          {img.titulo}
-                        </h4>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Hitos */}
-                {item.hitos && (
-                  <div className="flex flex-col gap-4 mt-6">
-                    {item.hitos.map((h, i) => (
-                      <div
-                        key={i}
-                        className={`flex flex-col md:flex-row gap-4 p-4 bg-white rounded-xl shadow-lg border-l-4 border-orange-400 ${
-                          isLeft ? "md:flex-row-reverse" : ""
-                        }`}
-                      >
-                        <div className="md:w-1/4 text-orange-400 font-bold font-serif text-xl text-right md:text-right">
-                          {h.siglo}
-                        </div>
-                        <div className="md:w-3/4 flex flex-col gap-2 text-right">
-                          <h4 className="text-lg font-serif font-bold text-gray-800">
-                            {h.titulo}
-                          </h4>
-                          <p className="text-gray-500">{h.descripcion}</p>
-                          <button className="bg-orange-400 text-white font-semibold px-5 py-2 rounded-full hover:bg-orange-500 w-max mt-2">
-                            {h.boton}
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Círculo de línea central */}
-              <div className="absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-4 border-orange-400 rounded-full shadow-lg"></div>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                    {descripcion}
+                </p>
+                {children} 
             </div>
-          );
-        })}
-      </div>
-
-      <div className="h-20"></div>
-    </div>
-  );
+            <div className={`md:w-1/2 w-full h-64 md:h-auto ${isLeft ? 'bg-amber-100' : 'bg-orange-100'} flex items-center justify-center p-8`}>
+                <p className="text-orange-900 font-serif text-2xl font-bold opacity-70">
+                    {isLeft ? 'Sabores Antiguos' : 'Legado Dulce'}
+                </p>
+            </div>
+        </div>
+    );
 };
+
+
+
+const HistoriaVideoModulo = ({ isLeft = true }) => {
+    const flexClass = isLeft ? 'md:flex-row' : 'md:flex-row-reverse';
+
+    return (
+        <div className={`flex flex-col ${flexClass} items-center bg-white rounded-xl shadow-xl hover:shadow-2xl transition duration-300 overflow-hidden`}>
+            <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+                <span className="text-xl font-serif font-extrabold text-orange-600 mb-2 border-b-2 border-orange-200 w-max pb-1">
+                    Siglo XX y XXI
+                </span>
+                <h3 className="text-3xl font-serif font-bold text-gray-800 mb-4">
+                    Fusión e Innovación Global
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    La pastelería se globalizó, incorporando sabores de todo el mundo. Técnicas modernas y el enfoque en diseño, ligereza y salud marcan la pauta actual. Chefs como Pierre Hermé marcan tendencia en la alta repostería moderna.
+                </p>
+                <div className="flex flex-col gap-3">
+                    <HitoCard
+                        siglo="Siglo XXI"
+                        titulo="La Pastelería como Arte"
+                        descripcion="La precisión y la estética se combinan para crear postres que son verdaderas obras de arte comestibles."
+                        boton="Ver Tendencias"
+                    />
+                </div>
+            </div>
+            
+
+            <div className={`md:w-1/2 w-full h-auto flex items-center justify-center p-8 bg-gray-100`}>
+                <VideoPlayer 
+                    posterText="Innovación Global" 
+                />
+            </div>
+        </div>
+    );
+};
+
+
+
+const AntiguedadModulo = () => (
+    <div className="bg-white rounded-xl shadow-xl p-8 md:p-12">
+        <div className="text-center mb-8">
+            <span className="text-xl font-serif font-extrabold text-orange-600 mb-2 border-b-2 border-orange-200 w-max pb-1 inline-block">
+                Antigüedad
+            </span>
+            <h3 className="text-3xl font-serif font-bold text-gray-800">
+                Los Primeros Bocados Dulces
+            </h3>
+        </div>
+        <p className="text-gray-700 text-lg leading-relaxed text-center mb-8 max-w-4xl mx-auto">
+            La historia de la pastelería se remonta al antiguo Egipto y Roma, donde ya se elaboraban panes endulzados con miel y frutas. Los egipcios fueron pioneros en técnicas de fermentación, mientras que los romanos desarrollaron las primeras tortas y postres a base de queso y harina.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ImagenCard src="/historia/Miel-y-alimentacion-en-egipto.webp" titulo="Egipto: Panes y Miel" />
+            <ImagenCard src="/historia/queso-grecia-clasica.webp" titulo="Roma: Postres con Queso" />
+            <ImagenCard src="/historia/antillas.webp" titulo="Asia: Descubrimiento del Azúcar" />
+        </div>
+    </div>
+);
+
+
+const ImagenCard = ({ src, titulo }) => (
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 border border-amber-100 overflow-hidden">
+
+        <img 
+            src={src || "https://placehold.co/600x400/fff7ed/d97706?text=Sin+Imagen"} 
+            className="w-full h-52 object-cover" 
+            alt={titulo} 
+            loading="lazy"
+        />
+        <div className="p-3 text-center">
+            <h4 className="font-serif font-semibold text-gray-800">{titulo}</h4>
+        </div>
+    </div>
+);
+
+
+const HitoCard = ({ siglo, titulo, descripcion, boton }) => (
+    <div className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500 mt-4 shadow-sm">
+        <span className="text-sm font-bold text-orange-700 block">{siglo}</span>
+        <h4 className="text-lg font-serif font-bold text-gray-800">{titulo}</h4>
+        <p className="text-gray-600 text-sm mb-3">{descripcion}</p>
+        <button className="bg-orange-500 text-white font-semibold text-sm px-4 py-1.5 rounded-full hover:bg-orange-600 transition duration-300">
+            {boton}
+        </button>
+    </div>
+);
+
+
+class Historia extends React.Component {
+    render() {
+        return (
+            <div className="flex-1 flex flex-col items-center" style={{ backgroundColor: "#F9F7F5" }}>
+
+                <div
+                    className="w-full max-w-7xl h-96 flex items-center justify-center text-white p-8 mb-20 rounded-b-3xl overflow-hidden shadow-2xl"
+                    style={{
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.5), 0 20px 25px -5px rgba(0, 0, 0, 0.2)'
+                    }}
+                >
+                    <div className="text-center max-w-4xl">
+                        <h1 className="text-6xl md:text-8xl font-['Playfair_Display'] font-extrabold mb-4 text-shadow-xl tracking-tight">
+                            Un Viaje Dulce
+                        </h1>
+                        <p className="text-xl md:text-2xl font-light font-serif">
+                            Descubre los orígenes y la evolución del arte de la repostería.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col gap-16 max-w-6xl w-full px-4 md:px-0">
+
+                    <AntiguedadModulo />
+
+                    <HistoriaModuloSimple
+                        tituloPrincipal="Edad Media y Renacimiento"
+                        tituloSecundario="Guardianes del Sabor"
+                        descripcion="Durante la Edad Media, los conventos y monasterios preservaron recetas dulces. Con la llegada del azúcar a Europa y el Renacimiento, surgieron las primeras pastelerías profesionales en Italia y Francia, donde la presentación se convirtió en arte."
+                        isLeft={false}
+                    />
+
+                    <HistoriaModuloSimple
+                        tituloPrincipal="Siglo XVII - XVIII"
+                        tituloSecundario="Pastelería de la Haute Cuisine"
+                        descripcion="En la corte francesa, chefs como François Pierre de La Varenne y Marie-Antoine Carême codificaron recetas y técnicas que definieron la pastelería clásica europea, estableciendo bases de decoración, hojaldres y pasteles elegantes."
+                        isLeft={true}
+                    >
+                        <HitoCard
+                            siglo="Siglo XVII"
+                            titulo="Carême y la Haute Cuisine"
+                            descripcion="Marie-Antoine Carême elevó la pastelería a un arte, inventando recetas y técnicas que aún se usan en la repostería profesional."
+                            boton="Más sobre Carême"
+                        />
+                    </HistoriaModuloSimple>
+
+
+                    <HistoriaModuloSimple
+                        tituloPrincipal="Siglo XIX"
+                        tituloSecundario="Producción en Masa"
+                        descripcion="La Revolución Industrial permitió producir ingredientes a gran escala, haciendo que los postres se popularizaran entre clases medias y trabajadoras. Surgieron hornos mecánicos, moldes estandarizados y confiterías comerciales."
+                        isLeft={false}
+                    >
+                        <HitoCard
+                            siglo="Siglo XIX"
+                            titulo="Avances Tecnológicos"
+                            descripcion="El acceso a azúcar y chocolate a menor costo permitió la expansión de pastelerías y dulcerías urbanas."
+                            boton="Ver detalles"
+                        />
+                    </HistoriaModuloSimple>
+
+                    <HistoriaVideoModulo isLeft={true} />
+
+                </div>
+                <div className="h-20"></div>
+            </div>
+        );
+    }
+}
 
 export default Historia;
