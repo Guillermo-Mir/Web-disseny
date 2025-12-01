@@ -6,6 +6,7 @@ import Home from './Home';
 import Historia from './components/historia'
 import Navbar from './components/Navbar';
 import Galeria from './components/galeria'
+import Forum from './components/forum'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/historia" element={<Historia/>}/>
         <Route path="/galeria" element={<Galeria/>}/>
+        <Route path="/forum" element={<Forum/>}/>
       </Routes>
       <Footer/>
     </div>
