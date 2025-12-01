@@ -1,8 +1,33 @@
 import React from "react";
-const VideoPlayer = ({ posterText = "Cargando Vídeo", videoTitle = "Vídeo sobre Pastelería Moderna" }) => {
-    // Definición de los URLs de vídeo de demostración (dominios públicos)
+
+const VideoPlayer = ({ 
+    posterText = "Cargando Vídeo", 
+    videoTitle = "Vídeo sobre Pastelería Moderna",
+    preferredFormat = "webm" 
+}) => {
     const webmSrc = "/videos/8626673-uhd_3840_2160_25fps.webm";
     const mp4Src = "/videos/videoplayback.mp4";
+
+    const WebMSource = (
+        <source 
+            src={webmSrc} 
+            type="video/webm" 
+            key="webm"
+        />
+    );
+    
+    const MP4Source = (
+        <source 
+            src={mp4Src} 
+            type="video/mp4" 
+            key="mp4"
+        />
+    );
+
+
+    const sources = preferredFormat === 'mp4' 
+        ? [MP4Source, WebMSource] 
+        : [WebMSource, MP4Source]; 
 
 
     return (
@@ -18,20 +43,8 @@ const VideoPlayer = ({ posterText = "Cargando Vídeo", videoTitle = "Vídeo sobr
                     muted={true} 
                     playsInline={true}
                 >
-                    {/* 1. Formato WebM (Preferido por eficiencia) */}
-                    <source 
-                        src={webmSrc} 
-                        type="video/webm" 
-                    />
-                    
+                    {sources} 
 
-                    {/* 2. Formato MP4 (Gran compatibilidad, esencial para Safari) */}
-                    <source 
-                        src={mp4Src} 
-                        type="video/mp4" 
-                    />
-
-                    {/* Mensaje de Fallback */}
                     <p className="p-4 text-white text-center">
                         Tu navegador no soporta la reproducción de vídeo.
                     </p>

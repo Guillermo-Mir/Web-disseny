@@ -1,11 +1,20 @@
 import React from "react";
-import VideoPlayer from "./VideoPlayer"; // Importa tu componente VideoPlayer
+import VideoPlayer from "./VideoPlayer";
+import AudioPlayer from "./AudioPlayer";
+import Gallery from "./Gallery"; // Importamos el componente Gallery
 
 class Historia extends React.Component {
     render() {
+
+        // Define aquí tus fuentes de audio para el Capítulo 2
+        const historiaAudioSources = [
+            // NOTA: Asegúrate de que estos archivos (.mp3 o .ogg) existan en tu directorio 'public/audios'
+            { url: "/audios/Historia del postre _Tiramisú_. [5a2YGKLeXu4].mp3", type: "audio/mpeg" },
+        ];
+
         return (
             <div className="flex-1 flex flex-col items-center min-h-screen pb-20" style={{ backgroundColor: "#fef3c7" }}>
-                
+
                 {/* Cabecera Estilizada (Banner Principal) */}
                 <header
                     className="w-full h-96 flex items-center justify-center text-white p-8 mb-20 rounded-b-[4rem] overflow-hidden shadow-2xl"
@@ -45,67 +54,86 @@ class Historia extends React.Component {
                         <p className="text-gray-700 text-lg leading-relaxed text-center mb-12 max-w-4xl mx-auto">
                             La historia de la familia Valle comienza con Elara, a finales del siglo XIX. Con un horno de barro y recetas heredadas de su abuela, Elara horneaba panes endulzados con miel local y los primeros "bizcochos de fiesta" de la región. Su secreto radicaba en la calidad de los ingredientes y la paciencia.
                         </p>
-                        
-                        {/* Contenedor de Story Image Cards */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            
-                            {/* StoryImageCard 1 */}
-                            <article className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border border-orange-200 overflow-hidden transform hover:-translate-y-1">
-                                <div className="relative h-52">
-                                    <img 
-                                        src="/historia/Miel-y-alimentacion-en-egipto.webp" 
-                                        className="w-full h-full object-cover" 
+
+                        {/* Contenedor de Story Image Cards - IMPLEMENTACIÓN DE GALLERY */}
+                        <Gallery>
+
+                            {/* StoryImageCard 1 - ESTILO COMPLETAMENTE NUEVO */}
+                            <article className="flex flex-col items-center p-2">
+                                <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
+                                    <img
+                                        src="/historia/Miel-y-alimentacion-en-egipto.webp"
+                                        className="w-full h-full object-cover"
                                         alt="El Primer Horno"
                                         onError={(e) => { e.target.src = 'https://placehold.co/600x400/fff7ed/d97706?text=Legado+Visual'; }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                    <h4 className="absolute bottom-0 left-0 p-4 text-xl font-serif font-bold text-white">El Primer Horno</h4>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                    <h4 className="absolute bottom-0 left-0 right-0 text-center p-4 text-2xl font-serif font-bold text-white tracking-wider drop-shadow-xl">El Primer Horno</h4>
                                 </div>
-                                <div className="p-4 bg-orange-50">
-                                    <p className="text-gray-700 text-sm italic">El horno de leña, donde todo comenzó, fuente de los primeros aromas dulces.</p>
+                                <div className="mt-4 text-center">
+                                    <p className="text-gray-700 text-base font-medium">El Primer Horno</p>
+                                    <p className="text-gray-500 text-sm italic leading-snug max-w-xs">El horno de leña, donde todo comenzó, fuente de los primeros aromas dulces.</p>
                                 </div>
                             </article>
 
-                            {/* StoryImageCard 2 */}
-                            <article className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border border-orange-200 overflow-hidden transform hover:-translate-y-1">
-                                <div className="relative h-52">
-                                    <img 
-                                        src="/historia/queso-grecia-clasica.webp" 
-                                        className="w-full h-full object-cover" 
+                            {/* StoryImageCard 2 - ESTILO COMPLETAMENTE NUEVO */}
+                            <article className="flex flex-col items-center p-2">
+                                <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
+                                    <img
+                                        src="/historia/queso-grecia-clasica.webp"
+                                        className="w-full h-full object-cover"
                                         alt="Los Bizcochos de Elara"
                                         onError={(e) => { e.target.src = 'https://placehold.co/600x400/fff7ed/d97706?text=Legado+Visual'; }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                    <h4 className="absolute bottom-0 left-0 p-4 text-xl font-serif font-bold text-white">Los Bizcochos de Elara</h4>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                    <h4 className="absolute bottom-0 left-0 right-0 text-center p-4 text-2xl font-serif font-bold text-white tracking-wider drop-shadow-xl">Los Bizcochos de Elara</h4>
                                 </div>
-                                <div className="p-4 bg-orange-50">
-                                    <p className="text-gray-700 text-sm italic">Recetas simples pero perfectas: el inicio del legado Valle.</p>
+                                <div className="mt-4 text-center">
+                                    <p className="text-gray-700 text-base font-medium">Los Bizcochos de Elara</p>
+                                    <p className="text-gray-500 text-sm italic leading-snug max-w-xs">Recetas simples pero perfectas: el inicio del legado Valle.</p>
                                 </div>
                             </article>
 
-                            {/* StoryImageCard 3 */}
-                            <article className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border border-orange-200 overflow-hidden transform hover:-translate-y-1">
-                                <div className="relative h-52">
-                                    <img 
-                                        src="/historia/antillas.webp" 
-                                        className="w-full h-full object-cover" 
+                            {/* StoryImageCard 3 - ESTILO COMPLETAMENTE NUEVO */}
+                            <article className="flex flex-col items-center p-2">
+                                <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
+                                    <img
+                                        src="/historia/antillas.webp"
+                                        className="w-full h-full object-cover"
                                         alt="El Viaje del Azúcar"
                                         onError={(e) => { e.target.src = 'https://placehold.co/600x400/fff7ed/d97706?text=Legado+Visual'; }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                                    <h4 className="absolute bottom-0 left-0 p-4 text-xl font-serif font-bold text-white">El Viaje del Azúcar</h4>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                    <h4 className="absolute bottom-0 left-0 right-0 text-center p-4 text-2xl font-serif font-bold text-white tracking-wider drop-shadow-xl">El Viaje del Azúcar</h4>
                                 </div>
-                                <div className="p-4 bg-orange-50">
-                                    <p className="text-gray-700 text-sm italic">La primera vez que Elara consiguió azúcar refinado, un lujo transformador.</p>
+                                <div className="mt-4 text-center">
+                                    <p className="text-gray-700 text-base font-medium">El Viaje del Azúcar</p>
+                                    <p className="text-gray-500 text-sm italic leading-snug max-w-xs">La primera vez que Elara consiguió azúcar refinado, un lujo transformador.</p>
                                 </div>
                             </article>
-                        </div>
+                            {/* StoryImageCard 4 - NUEVO ESPACIO TEMÁTICO: La Harina */}
+                            <article className="flex flex-col items-center p-2">
+                                <div className="relative h-64 w-full flex items-center justify-center overflow-hidden rounded-3xl bg-amber-50 shadow-inner transition duration-500 transform hover:shadow-xl">
+                                    <img
+                                        src="/historia/1280px-Ramses_III_bakery.webp"
+                                        className="w-full h-full object-cover"
+                                        alt="El Viaje del Azúcar"
+                                        onError={(e) => { e.target.src = 'https://placehold.co/600x400/fff7ed/d97706?text=Legado+Visual'; }}
+                                    />
+                                </div>
+                                <div className="mt-4 text-center">
+                                    <p className="text-gray-700 text-base font-medium">La Fuente de la Masa</p>
+                                    <p className="text-gray-500 text-sm italic leading-snug max-w-xs">Slot reservado para imágenes de campos de trigo o molienda de harina antigua.</p>
+                                </div>
+                            </article>
+                        </Gallery>
                     </section>
+                    {/* El resto de los capítulos (2, 3, 4 y 5) se mantienen con los arreglos de centrado anteriores */}
 
-                    {/* Capítulo 2: La Formación (Mateo Valle) */}
+                    {/* Capítulo 2: La Formación (Mateo Valle) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-amber-50 rounded-3xl shadow-2xl overflow-hidden">
                         {/* Contenido de Texto */}
-                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center">
+                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 2
                             </span>
@@ -118,7 +146,7 @@ class Historia extends React.Component {
                             <p className="text-gray-700 text-lg leading-relaxed mb-6">
                                 Mateo Valle, hijo de Elara, sintió la llamada de las grandes capitales pasteleras. Dejó el pueblo para formarse en París y Viena, donde aprendió la precisión del hojaldre, la elegancia de los 'entremets' y la ciencia de los mousses. Regresó con un conocimiento que fusionaría el sabor de su hogar con la sofisticación europea.
                             </p>
-                            <div className="mt-6 border-t pt-4 border-orange-200">
+                            <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 {/* StoryMilestone 1 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
@@ -132,36 +160,23 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* Contenido Multimedia/Visual */}
-                        <div className="md:w-1/2 w-full min-h-64 bg-amber-100 flex items-center justify-center p-6 md:p-10">
-                            <div className="w-full">
-                                <h4 className="text-xl font-semibold mb-3 text-gray-800">El Arte de la Tradición</h4>
-                                <div className="relative w-full shadow-2xl rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%', height: 0 }}>
-                                    <video
-                                        className="absolute top-0 left-0 w-full h-full rounded-xl border border-gray-300 bg-black"
-                                        controls
-                                        preload="metadata" 
-                                        loading="lazy"   
-                                        muted={true} 
-                                        playsInline={true}
-                                    >
-                                        <source 
-                                            src="/videos/8626673-uhd_3840_2160_25fps.webm" 
-                                            type="video/webm" 
-                                        />
-                                        <p className="p-4 text-white text-center">
-                                            Tu navegador no soporta la reproducción de vídeo.
-                                        </p>
-                                    </video>
-                                </div>
+                        {/* Contenido Multimedia/Visual: Usamos AudioPlayer aquí */}
+                        <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-amber-100">
+                            <div className="w-full h-full flex items-center justify-center">
+                                {/* Componente AudioPlayer implementado */}
+                                <AudioPlayer
+                                    title="Historia del Tiramisu"
+                                    sources={historiaAudioSources}
+                                />
+                                {/* Fin de la implementación del AudioPlayer */}
                             </div>
                         </div>
                     </section>
 
-                    {/* Capítulo 3: La Primera Tienda (Ana y el Sentido del Hogar) */}
+                    {/* Capítulo 3: La Primera Tienda (WebM Prioritario) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row-reverse items-stretch bg-orange-100 rounded-3xl shadow-2xl overflow-hidden">
                         {/* Contenido de Texto */}
-                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center">
+                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 3
                             </span>
@@ -174,7 +189,7 @@ class Historia extends React.Component {
                             <p className="text-gray-700 text-lg leading-relaxed mb-6">
                                 Al volver, Mateo y su esposa Ana abrieron su primera pastelería: un pequeño local donde el aroma a mantequilla derretida y chocolate era una invitación constante. Ana aportó la calidez y el servicio personalizado, haciendo que la pastelería se convirtiera en el punto de encuentro de la comunidad, manteniendo viva la esencia de Elara.
                             </p>
-                            <div className="mt-6 border-t pt-4 border-orange-200">
+                            <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 {/* StoryMilestone 2 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
@@ -188,19 +203,20 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* Contenido Multimedia/Visual */}
-                        <div className="md:w-1/2 w-full min-h-64 bg-orange-50 flex items-center justify-center p-6 md:p-10">
-                            <div className="w-full h-full flex items-center justify-center">
-                                <p className="text-orange-900/50 font-serif text-3xl font-bold p-8 border-4 border-dashed border-orange-900/30 rounded-xl">
-                                    El Secreto de la Abuela
-                                </p>
+                        {/* Contenido Multimedia/Visual (WebM Prioritario) */}
+                        <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-orange-50">
+                            <div className="w-full">
+                                <VideoPlayer
+                                    videoTitle="El Secreto de la Abuela"
+                                    preferredFormat="webm"
+                                />
                             </div>
                         </div>
                     </section>
-                    
-                    {/* Capítulo 4: Fusión e Innovación (Sofia Valle) */}
+
+                    {/* Capítulo 4: Fusión e Innovación (MP4 Prioritario) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-orange-500">
-                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center order-2 md:order-1">
+                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start order-2 md:order-1">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 4
                             </span>
@@ -211,9 +227,9 @@ class Historia extends React.Component {
                                 Tradición con mirada al futuro.
                             </p>
                             <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                                Sofía, la tercera generación, heredó la precisión de Mateo y el corazón de Ana. Ella revolucionó el obrador, incorporando técnicas de vanguardia, ingredientes exóticos y un enfoque en postres más ligeros y visualmente impactantes. 
+                                Sofía, la tercera generación, heredó la precisión de Mateo y el corazón de Ana. Ella revolucionó el obrador, incorporando técnicas de vanguardia, ingredientes exóticos y un enfoque en postres más ligeros y visualmente impactantes.
                             </p>
-                            <div className="mt-6 border-t pt-4 border-orange-200">
+                            <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 {/* StoryMilestone 3 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
@@ -226,20 +242,21 @@ class Historia extends React.Component {
                                 </div>
                             </div>
                         </article>
-                        
-                        {/* El Slot de Video Player */}
+
+                        {/* El Slot de Video Player (MP4 Prioritario) */}
                         <div className="md:w-1/2 w-full h-auto flex items-center justify-center p-8 bg-orange-100 order-1 md:order-2">
-                            <VideoPlayer 
+                            <VideoPlayer
                                 videoTitle="Técnicas Modernas de Repostería"
                                 posterText="Descubre las innovaciones"
+                                preferredFormat="mp4"
                             />
                         </div>
                     </section>
 
-                    {/* Capítulo 5: El Presente (La Casa Dulce) */}
+                    {/* Capítulo 5: El Presente (La Casa Dulce) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-amber-50 rounded-3xl shadow-2xl overflow-hidden">
                         {/* Contenido de Texto */}
-                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center">
+                        <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 5
                             </span>
@@ -252,7 +269,7 @@ class Historia extends React.Component {
                             <p className="text-gray-700 text-lg leading-relaxed mb-6">
                                 Hoy, la pastelería se ha renombrado como 'La Casa Dulce', un homenaje a la calidez de su hogar y la excelencia de sus productos. La pastelería Valle es un símbolo de cómo la tradición familiar, combinada con la innovación, puede crear algo verdaderamente atemporal y delicioso. Te invitamos a ser parte de esta historia.
                             </p>
-                            <div className="mt-6 border-t pt-4 border-orange-200">
+                            <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 {/* StoryMilestone 4 (Hito actual) */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-orange-600 text-white shadow-xl">
                                     <div className="p-3 rounded-full bg-white text-orange-600 flex items-center justify-center w-12 h-12">
@@ -267,7 +284,7 @@ class Historia extends React.Component {
                         </article>
 
                         {/* Contenido Multimedia/Visual */}
-                        <div className="md:w-1/2 w-full min-h-64 bg-amber-100 flex items-center justify-center p-6 md:p-10">
+                        <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-amber-100">
                             <div className="w-full h-full flex items-center justify-center">
                                 <p className="text-orange-900/50 font-serif text-3xl font-bold p-8 border-4 border-dashed border-orange-900/30 rounded-xl">
                                     La Receta Mágica
