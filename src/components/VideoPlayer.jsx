@@ -1,7 +1,7 @@
 import React from "react";
 const VideoPlayer = ({ posterText = "Cargando Vídeo", videoTitle = "Vídeo sobre Pastelería Moderna" }) => {
     // Definición de los URLs de vídeo de demostración (dominios públicos)
-    const webmSrc = "/videos/videoplayback.webm";
+    const webmSrc = "/videos/8626673-uhd_3840_2160_25fps.webm";
     const mp4Src = "/videos/videoplayback.mp4";
 
 
