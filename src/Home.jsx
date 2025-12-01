@@ -4,18 +4,18 @@ class Home extends React.Component {
     render() {
         return (
 
-            <div className="flex-1 flex flex-col items-center" style={{ backgroundColor: "#F3E9DC" }}>
-                <div
+            <main className="flex-1 flex flex-col items-center" style={{ backgroundColor: "#F3E9DC" }}>
+
+                <header
                     className="w-full h-96 flex items-center justify-center text-white p-8 mb-12"
                     style={{
                         backgroundImage: "url('home/fondo.jpg')", 
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundColor: '#F3E9DC', 
-                        boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.4)'
+                        boxShadow: 'inset 0 0 0 2000px rgba(0, 0, 0, 0.4)' 
                     }}
                 >
-
                     <div className="text-center max-w-4xl">
                         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-shadow-lg">
                             La Dulzura de la Tradición
@@ -24,31 +24,42 @@ class Home extends React.Component {
                             Descubre nuestros sabores artesanales, hechos con pasión y los mejores ingredientes.
                         </p>
                     </div>
-                </div>
+                </header>
+                
                 <div className="flex flex-col gap-12 max-w-6xl w-full py-12">
-                    <div className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center gap-8 w-full">
+                    
+                    <section className="bg-white rounded-lg shadow-md p-8 flex flex-col items-center gap-8 w-full">
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center">
                             Especialidad de la casa
                         </h2>
+                        
                         <div className="flex flex-wrap justify-center gap-8 w-full">
-                            <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="/home/brazo-gitano-nata-380x380.jpg" width={300} height={300} className="rounded" />
-                                <h4 className="text-center font-semibold">Brazo de gitano</h4>
-                            </div>
+                            
+                            {/* Producto 1 - Uso semántico de <figure> y <figcaption> para contenido con imagen */}
+                            <figure className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
+                                <img src="/home/brazo-gitano-nata-380x380.jpg" width={300} height={300} className="rounded" alt="Imagen de un Brazo de gitano, especialidad de la casa" />
+                                <figcaption>
+                                    <h4 className="text-center font-semibold">Brazo de gitano</h4>
+                                </figcaption>
+                            </figure>
 
-                            <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="/home/foto-cuadrada-2025-01-15T112519.300.png" width={300} height={300} className="rounded" />
-                                <h4 className="text-center font-semibold">Tarta de queso</h4>
-                            </div>
+                            <figure className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
+                                <img src="/home/foto-cuadrada-2025-01-15T112519.300.png" width={300} height={300} className="rounded" alt="Imagen de una Tarta de queso, especialidad de la casa" />
+                                <figcaption>
+                                    <h4 className="text-center font-semibold">Tarta de queso</h4>
+                                </figcaption>
+                            </figure>
 
-                            <div className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
-                                <img src="/home/tarta-fresitas-1024x1024.jpg" width={300} height={300} className="rounded" />
-                                <h4 className="text-center font-semibold">Tarta de fresa</h4>
-                            </div>
+                            <figure className="bg-white p-5 rounded-lg shadow-md flex flex-col items-center gap-3">
+                                <img src="/home/tarta-fresitas-1024x1024.jpg" width={300} height={300} className="rounded" alt="Imagen de una Tarta de fresa, especialidad de la casa" />
+                                <figcaption>
+                                    <h4 className="text-center font-semibold">Tarta de fresa</h4>
+                                </figcaption>
+                            </figure>
                         </div>
-                    </div>
+                    </section>
 
-                    <div className="bg-white rounded-lg shadow-md p-8 text-center">
+                    <section className="bg-white rounded-lg shadow-md p-8 text-center">
                         <h2 className="text-2xl font-semibold mb-4">Mundo de la Pastelería</h2>
                         <p className="text-gray-700 text-base leading-relaxed">
                             Desde los primeros panes dulces en la antigüedad hasta las sofisticadas creaciones
@@ -58,16 +69,16 @@ class Home extends React.Component {
                             sabores y texturas que deleitan tanto a la vista como al paladar. En cada bocado, buscamos
                             despertar la nostalgia y la alegría, conectando el pasado con la dulzura del presente.
                         </p>
-                    </div>
+                    </section>
 
-                    <div className="w-full">
+                    <section className="w-full">
                         <h2 className="text-3xl md:text-5xl font-bold text-center mb-10 text-gray-800">
                             Novedades del Gremio
                         </h2>
+                        
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
 
-
-                            <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
+                            <article className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
                                 <h3 className="text-xl font-bold text-gray-800">
                                     La mejor palmera de España la elabora una pastelería aragonesa
                                 </h3>
@@ -77,10 +88,9 @@ class Home extends React.Component {
                                 <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-500 transition self-start">
                                     Leer noticia
                                 </button>
-                            </div>
+                            </article>
 
-
-                            <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
+                            <article className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
                                 <h3 className="text-xl font-bold text-gray-800">
                                     Abre una panadería-pastelería con sabores de Portugal en Vigo
                                 </h3>
@@ -90,10 +100,9 @@ class Home extends React.Component {
                                 <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-500 transition self-start">
                                     Leer noticia
                                 </button>
-                            </div>
+                            </article>
 
-
-                            <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
+                            <article className="bg-white p-6 rounded-xl shadow-lg flex flex-col gap-4 border-t-4 border-gray-400 hover:border-orange-500 transition duration-300">
                                 <h3 className="text-xl font-bold text-gray-800">
                                     Una pastelería gana fama mundial por su respuesta a influencer
                                 </h3>
@@ -103,11 +112,11 @@ class Home extends React.Component {
                                 <button className="bg-orange-400 text-white font-semibold px-6 py-2 rounded-full hover:bg-orange-500 transition self-start">
                                     Leer noticia
                                 </button>
-                            </div>
+                            </article>
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
+            </main>
         );
     }
 }

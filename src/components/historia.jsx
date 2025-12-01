@@ -1,21 +1,18 @@
 import React from "react";
 import VideoPlayer from "./VideoPlayer";
 import AudioPlayer from "./AudioPlayer";
-import Gallery from "./Gallery"; // Importamos el componente Gallery
+import Gallery from "./Gallery"; 
 
 class Historia extends React.Component {
     render() {
 
-        // Define aquí tus fuentes de audio para el Capítulo 2
         const historiaAudioSources = [
-            // NOTA: Asegúrate de que estos archivos (.mp3 o .ogg) existan en tu directorio 'public/audios'
             { url: "/audios/Historia del postre _Tiramisú_. [5a2YGKLeXu4].mp3", type: "audio/mpeg" },
         ];
 
         return (
             <div className="flex-1 flex flex-col items-center min-h-screen pb-20" style={{ backgroundColor: "#fef3c7" }}>
 
-                {/* Cabecera Estilizada (Banner Principal) */}
                 <header
                     className="w-full h-96 flex items-center justify-center text-white p-8 mb-20 rounded-b-[4rem] overflow-hidden shadow-2xl"
                     style={{
@@ -35,10 +32,8 @@ class Historia extends React.Component {
                     </div>
                 </header>
 
-                {/* Cuerpo de la Historia (Secciones/Capítulos) */}
                 <div className="flex flex-col gap-24 max-w-7xl w-full px-4 md:px-6">
 
-                    {/* Capítulo 1: Los Orígenes (Elara Valle) */}
                     <section className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-orange-200">
                         <div className="text-center mb-10">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1 inline-block">
@@ -55,10 +50,7 @@ class Historia extends React.Component {
                             La historia de la familia Valle comienza con Elara, a finales del siglo XIX. Con un horno de barro y recetas heredadas de su abuela, Elara horneaba panes endulzados con miel local y los primeros "bizcochos de fiesta" de la región. Su secreto radicaba en la calidad de los ingredientes y la paciencia.
                         </p>
 
-                        {/* Contenedor de Story Image Cards - IMPLEMENTACIÓN DE GALLERY */}
                         <Gallery>
-
-                            {/* StoryImageCard 1 - ESTILO COMPLETAMENTE NUEVO */}
                             <article className="flex flex-col items-center p-2">
                                 <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
                                     <img
@@ -76,7 +68,6 @@ class Historia extends React.Component {
                                 </div>
                             </article>
 
-                            {/* StoryImageCard 2 - ESTILO COMPLETAMENTE NUEVO */}
                             <article className="flex flex-col items-center p-2">
                                 <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
                                     <img
@@ -94,7 +85,6 @@ class Historia extends React.Component {
                                 </div>
                             </article>
 
-                            {/* StoryImageCard 3 - ESTILO COMPLETAMENTE NUEVO */}
                             <article className="flex flex-col items-center p-2">
                                 <div className="relative h-64 w-full overflow-hidden rounded-3xl shadow-2xl transition duration-500 transform hover:scale-[1.03]">
                                     <img
@@ -111,7 +101,6 @@ class Historia extends React.Component {
                                     <p className="text-gray-500 text-sm italic leading-snug max-w-xs">La primera vez que Elara consiguió azúcar refinado, un lujo transformador.</p>
                                 </div>
                             </article>
-                            {/* StoryImageCard 4 - NUEVO ESPACIO TEMÁTICO: La Harina */}
                             <article className="flex flex-col items-center p-2">
                                 <div className="relative h-64 w-full flex items-center justify-center overflow-hidden rounded-3xl bg-amber-50 shadow-inner transition duration-500 transform hover:shadow-xl">
                                     <img
@@ -128,11 +117,8 @@ class Historia extends React.Component {
                             </article>
                         </Gallery>
                     </section>
-                    {/* El resto de los capítulos (2, 3, 4 y 5) se mantienen con los arreglos de centrado anteriores */}
 
-                    {/* Capítulo 2: La Formación (Mateo Valle) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-amber-50 rounded-3xl shadow-2xl overflow-hidden">
-                        {/* Contenido de Texto */}
                         <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 2
@@ -147,7 +133,6 @@ class Historia extends React.Component {
                                 Mateo Valle, hijo de Elara, sintió la llamada de las grandes capitales pasteleras. Dejó el pueblo para formarse en París y Viena, donde aprendió la precisión del hojaldre, la elegancia de los 'entremets' y la ciencia de los mousses. Regresó con un conocimiento que fusionaría el sabor de su hogar con la sofisticación europea.
                             </p>
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
-                                {/* StoryMilestone 1 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
                                         <span className="text-2xl">☕</span>
@@ -160,22 +145,17 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* Contenido Multimedia/Visual: Usamos AudioPlayer aquí */}
                         <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-amber-100">
                             <div className="w-full h-full flex items-center justify-center">
-                                {/* Componente AudioPlayer implementado */}
                                 <AudioPlayer
                                     title="Historia del Tiramisu"
                                     sources={historiaAudioSources}
                                 />
-                                {/* Fin de la implementación del AudioPlayer */}
                             </div>
                         </div>
                     </section>
 
-                    {/* Capítulo 3: La Primera Tienda (WebM Prioritario) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row-reverse items-stretch bg-orange-100 rounded-3xl shadow-2xl overflow-hidden">
-                        {/* Contenido de Texto */}
                         <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 3
@@ -190,7 +170,6 @@ class Historia extends React.Component {
                                 Al volver, Mateo y su esposa Ana abrieron su primera pastelería: un pequeño local donde el aroma a mantequilla derretida y chocolate era una invitación constante. Ana aportó la calidez y el servicio personalizado, haciendo que la pastelería se convirtiera en el punto de encuentro de la comunidad, manteniendo viva la esencia de Elara.
                             </p>
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
-                                {/* StoryMilestone 2 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
                                         <span className="text-2xl">🍰</span>
@@ -203,7 +182,6 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* Contenido Multimedia/Visual (WebM Prioritario) */}
                         <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-orange-50">
                             <div className="w-full">
                                 <VideoPlayer
@@ -214,7 +192,6 @@ class Historia extends React.Component {
                         </div>
                     </section>
 
-                    {/* Capítulo 4: Fusión e Innovación (MP4 Prioritario) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-orange-500">
                         <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start order-2 md:order-1">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
@@ -230,7 +207,6 @@ class Historia extends React.Component {
                                 Sofía, la tercera generación, heredó la precisión de Mateo y el corazón de Ana. Ella revolucionó el obrador, incorporando técnicas de vanguardia, ingredientes exóticos y un enfoque en postres más ligeros y visualmente impactantes.
                             </p>
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
-                                {/* StoryMilestone 3 */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
                                         <span className="text-2xl">⚡</span>
@@ -243,7 +219,6 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* El Slot de Video Player (MP4 Prioritario) */}
                         <div className="md:w-1/2 w-full h-auto flex items-center justify-center p-8 bg-orange-100 order-1 md:order-2">
                             <VideoPlayer
                                 videoTitle="Técnicas Modernas de Repostería"
@@ -252,10 +227,7 @@ class Historia extends React.Component {
                             />
                         </div>
                     </section>
-
-                    {/* Capítulo 5: El Presente (La Casa Dulce) - Centrado previamente arreglado */}
                     <section className="flex flex-col md:flex-row items-stretch bg-amber-50 rounded-3xl shadow-2xl overflow-hidden">
-                        {/* Contenido de Texto */}
                         <article className="p-8 md:p-16 md:w-1/2 flex flex-col justify-center items-start">
                             <span className="text-lg font-sans font-semibold text-red-600 mb-2 tracking-widest border-b-2 border-red-200 w-max pb-1">
                                 CAPÍTULO 5
@@ -270,7 +242,6 @@ class Historia extends React.Component {
                                 Hoy, la pastelería se ha renombrado como 'La Casa Dulce', un homenaje a la calidez de su hogar y la excelencia de sus productos. La pastelería Valle es un símbolo de cómo la tradición familiar, combinada con la innovación, puede crear algo verdaderamente atemporal y delicioso. Te invitamos a ser parte de esta historia.
                             </p>
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
-                                {/* StoryMilestone 4 (Hito actual) */}
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-orange-600 text-white shadow-xl">
                                     <div className="p-3 rounded-full bg-white text-orange-600 flex items-center justify-center w-12 h-12">
                                         <span className="text-2xl">🏭</span>
@@ -283,7 +254,6 @@ class Historia extends React.Component {
                             </div>
                         </article>
 
-                        {/* Contenido Multimedia/Visual */}
                         <div className="md:w-1/2 w-full flex items-center justify-center p-6 md:p-10 bg-amber-100">
                             <div className="w-full h-full flex items-center justify-center">
                                 <p className="text-orange-900/50 font-serif text-3xl font-bold p-8 border-4 border-dashed border-orange-900/30 rounded-xl">

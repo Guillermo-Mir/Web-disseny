@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Home from './Home';
 import Historia from './components/historia'
 import Navbar from './components/Navbar';
+import Galeria from './components/galeria'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/historia" element={<Historia/>}/>
+        <Route path="/galeria" element={<Galeria/>}/>
       </Routes>
       <Footer/>
     </div>
