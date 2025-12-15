@@ -60,6 +60,14 @@ function Navbar() {
                                 Fórum
                             </Link>
                         </li>
+                        <li>
+                            <Link
+                                to="/formulari"
+                                className={`transition-colors duration-200 hover:text-[${primaryColor}] nav-link ${isActive('/forum') ? 'active' : ''}`}
+                            >
+                                Contacta
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
 

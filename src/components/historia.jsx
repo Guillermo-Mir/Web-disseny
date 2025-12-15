@@ -172,7 +172,7 @@ class Historia extends React.Component {
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-white hover:bg-orange-50 border border-orange-200">
                                     <div className="p-3 rounded-full bg-orange-500 text-white flex items-center justify-center w-12 h-12">
-                                        <span className="text-2xl">🍰</span>
+                                        <span className="text-2xl"></span>
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-serif font-bold text-gray-900">1965: Apertura Oficial</h4>
@@ -244,7 +244,7 @@ class Historia extends React.Component {
                             <div className="mt-6 border-t pt-4 border-orange-200 w-full">
                                 <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 bg-orange-600 text-white shadow-xl">
                                     <div className="p-3 rounded-full bg-white text-orange-600 flex items-center justify-center w-12 h-12">
-                                        <span className="text-2xl">🏭</span>
+                                        <span className="text-2xl"></span>
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-serif font-bold text-white">¡El Legado Continúa!</h4>

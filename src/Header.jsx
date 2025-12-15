@@ -50,6 +50,14 @@ class Header extends React.Component {
                                     Fórum
                                 </a>
                             </li>
+                            <li>
+                                <a 
+                                    href="#" 
+                                    className={`hover:text-[${primaryColor}] transition-colors duration-200`}
+                                >
+                                    Formulari
+                                </a>
+                            </li>
                         </ul>
                     </nav>
 
