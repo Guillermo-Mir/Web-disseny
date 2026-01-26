@@ -25,7 +25,8 @@ function Navbar() {
         </div>
 
         <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
-          <ul className="flex space-x-10 uppercase text-base font-semibold text-gray-700">
+          {/* Canvi: text-gray-900 per millorar el contrast base */}
+          <ul className="flex space-x-10 uppercase text-base font-semibold text-gray-900">
             {[
               { path: "/", label: "Home" },
               { path: "/historia", label: "Historia" },
@@ -37,8 +38,11 @@ function Navbar() {
               <li key={path}>
                 <Link
                   to={path}
-                  className={`transition-colors duration-200 hover:text-orange-500 ${
-                    isActive(path) ? "text-orange-500" : ""
+                  /* Canvi: Eliminat text-orange. Afegit border-b-2 negre si és actiu o hover */
+                  className={`pb-1 transition-all duration-200 border-b-2 ${
+                    isActive(path) 
+                      ? "border-black" 
+                      : "border-transparent hover:border-black"
                   }`}
                 >
                   {label}
@@ -50,19 +54,19 @@ function Navbar() {
 
         <div className="flex items-center space-x-4">
           <button
-            className="lg:hidden p-2 text-gray-700 hover:text-orange-500 transition"
+            className="lg:hidden p-2 text-gray-900 hover:text-black transition"
             aria-label="Abrir menú"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
 
-    
           <a href="#" aria-label="Perfil de Usuario">
             <img
               src="/user.svg"
               alt="Usuario"
-              className="h-10 w-10 rounded-full hover:ring-2 hover:ring-orange-500 transition cursor-pointer"
+              /* Canvi: El ring de l'usuari ara és negre al fer hover */
+              className="h-10 w-10 rounded-full hover:ring-2 hover:ring-black transition cursor-pointer"
             />
           </a>
         </div>
@@ -70,7 +74,7 @@ function Navbar() {
 
       {menuOpen && (
         <nav className="lg:hidden bg-[#F3E9DC] border-t border-orange-400">
-          <ul className="flex flex-col items-center space-y-4 py-4 uppercase font-semibold text-gray-700">
+          <ul className="flex flex-col items-center space-y-4 py-4 uppercase font-semibold text-gray-900">
             {[
               { path: "/", label: "Home" },
               { path: "/historia", label: "Historia" },
@@ -83,8 +87,11 @@ function Navbar() {
                 <Link
                   to={path}
                   onClick={() => setMenuOpen(false)}
-                  className={`transition-colors duration-200 hover:text-orange-500 ${
-                    isActive(path) ? "text-orange-500" : ""
+                  /* Canvi: Mateixa lògica de subratllat per al menú mòbil */
+                  className={`pb-1 border-b-2 ${
+                    isActive(path) 
+                      ? "border-black" 
+                      : "border-transparent"
                   }`}
                 >
                   {label}

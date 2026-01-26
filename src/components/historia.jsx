@@ -57,6 +57,7 @@ class Historia extends React.Component {
                                         src="/historia/Miel-y-alimentacion-en-egipto.webp"
                                         className="w-full h-full object-cover"
                                         alt="El Primer Horno"
+                                        loading="lazy"  
                                         onError={(e) => { e.target.src = 'https://placehold.co/600x400/fff7ed/d97706?text=Legado+Visual'; }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
