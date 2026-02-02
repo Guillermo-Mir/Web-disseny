@@ -39,14 +39,6 @@ class Header extends React.Component {
                                     href="#" 
                                     className={`hover:text-[${primaryColor}] transition-colors duration-200`}
                                 >
-                                    Tienda Online
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    href="#" 
-                                    className={`hover:text-[${primaryColor}] transition-colors duration-200`}
-                                >
                                     Fórum
                                 </a>
                             </li>

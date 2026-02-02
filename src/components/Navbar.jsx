@@ -31,7 +31,6 @@ function Navbar() {
               { path: "/", label: "Home" },
               { path: "/historia", label: "Historia" },
               { path: "/galeria", label: "Galería" },
-              { path: "/tienda", label: "Tienda Online" },
               { path: "/forum", label: "Fórum" },
               { path: "/formulari", label: "Contacta" },
             ].map(({ path, label }) => (
@@ -79,7 +78,6 @@ function Navbar() {
               { path: "/", label: "Home" },
               { path: "/historia", label: "Historia" },
               { path: "/galeria", label: "Galería" },
-              { path: "/tienda", label: "Tienda Online" },
               { path: "/forum", label: "Fórum" },
               { path: "/formulari", label: "Contacta" },
             ].map(({ path, label }) => (
