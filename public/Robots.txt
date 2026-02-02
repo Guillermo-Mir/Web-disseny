@@ -1,0 +1,6 @@
+#Permet l'accés a tothom
+User-agent: *
+
+#Bloqueig de ruta
+Disallow: /admin
+Disallow: /privat
