@@ -1,108 +1,131 @@
 @import 'variables';
 
-// Requisito: Nitidez
-%sharp-text {
+
+%font-sharpness {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
 .main-footer {
-    @extend %sharp-text;
+    @extend %font-sharpness;
     background-color: $color-bg-beige;
     width: 100%;
-    padding: 40px 0; // py-10
-    border-top: 4px solid #fb923c; // La línea naranja superior
+    border-top: 0.25rem solid #fb923c; 
     font-family: $font-main;
+    
+    padding: 2rem 1rem; 
 
     .footer-container {
-        // Esto es lo que evita que se pegue a los bordes
-        max-width: 1152px; 
+        width: 100%;
         margin: 0 auto;
-        padding: 0 20px;
     }
 
     .footer-grid {
         display: flex;
-        flex-direction: column; // Móvil: uno debajo de otro
-        gap: 40px;
-        
-        @media (min-width: 768px) {
-            flex-direction: row; // PC: Uno al lado de otro
-            justify-content: space-between; // Espacio entre columnas
-            text-align: left;
-        }
+        flex-direction: column; 
+        gap: 2.5rem;            
+        text-align: center;     
     }
 
     .footer-column {
         h4 {
             color: $color-primary;
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 1rem;
         }
     }
 
     .footer-list {
         list-style: none;
         padding: 0;
-        margin: 0;
         display: flex;
         flex-direction: column;
-        gap: 12px; // space-y-3
+        gap: 0.8rem;
 
         a {
             text-decoration: none;
             color: $color-text-muted;
-            font-size: 1rem;
+            font-size: 0.95rem; 
             transition: color 0.3s;
 
-            // Requisito: CONDICIONAL
             &:hover {
-                @if $color-accent == #d17842 {
-                    color: $color-accent;
-                } @else {
-                    color: darken($color-text-muted, 20%);
-                }
+                @if $color-accent == #d17842 { color: $color-accent; }
+                @else { color: black; }
             }
         }
     }
 
     .social-icons {
         display: flex;
-        gap: 15px;
-        // En tu imagen se ven uno debajo de otro, esto lo pone en fila:
-        flex-direction: row; 
+        justify-content: center; 
+        gap: 1.5rem;
+        margin-top: 0.5rem;
 
         a {
-            color: #374151;
-            display: flex;
-            align-items: center;
-            transition: transform 0.2s;
-            
-            &:hover {
-                color: $color-accent;
-                transform: translateY(-3px);
-            }
+            color: $color-text-muted;
+            &:hover { color: $color-accent; }
         }
     }
 
     .footer-divider {
         border: 0;
-        border-top: 1px solid #d1d5db;
-        margin: 30px 0;
+        border-top: 0.0625rem solid #d1d5db;
+        margin: 2rem 0;
     }
 
     .footer-copy {
         text-align: center;
+        font-size: 0.85rem;
         color: $color-text-muted;
-        font-size: 0.875rem;
+        line-height: 1.4;
     }
 
-    // Requisito: BUCLE
-    @for $i from 1 through 3 {
-        .footer-spacing-#{$i} {
-            margin-bottom: $i * 10px;
+
+    @media (min-width: 768px) {
+        padding: 3rem 2rem;
+
+        .footer-grid {
+            flex-direction: row;      
+            flex-wrap: wrap;          
+            justify-content: space-around;
+            text-align: left;        
         }
+
+        .footer-column {
+            flex: 1 1 40%;           
+        }
+
+        .social-icons {
+            justify-content: flex-start;
+        }
+    }
+
+
+    @media (min-width: 1024px) {
+        .footer-container {
+            max-width: 1024px;        
+        }
+
+        .footer-grid {
+            flex-wrap: nowrap;        
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;                
+            
+            h4 {
+                font-size: 1.25rem;   
+            }
+        }
+    }
+}
+
+
+@for $i from 1 through 3 {
+    .m-mobile-#{$i} {
+        margin-bottom: #{$i}rem;
     }
 }
